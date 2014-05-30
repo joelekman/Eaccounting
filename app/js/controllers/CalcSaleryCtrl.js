@@ -22,7 +22,7 @@ eaccountingControllers.controller('CalcSaleryCtrl', ['$scope',
         $scope.counteFromSaleryWithTax = function() {
             console.log("i beräkna med skatt");
             /*if ($scope.saleryWithTax !== undefined){*/
-               $scope.count($scope.saleryWithTax/eFee);
+               $scope.count(Math.round($scope.saleryWithTax/eFee));
            /* } else {
                 alert("Då måste ange ett hur mycket bruttolön du vill ha");
             }*/
@@ -30,10 +30,10 @@ eaccountingControllers.controller('CalcSaleryCtrl', ['$scope',
     
         $scope.count = function (ownWithdrawl){
             $scope.ownWithdrawl = ownWithdrawl;
-            $scope.saleryWithTax = ownWithdrawl*eFee;
-            $scope.tax = $scope.saleryWithTax*taxFee;
-            $scope.employmentFee = ownWithdrawl*(1-eFee);
-            $scope.saleryWithOutTax = $scope.saleryWithTax*(1-taxFee);
+            $scope.saleryWithTax = Math.round(ownWithdrawl*eFee);
+            $scope.tax = Math.round($scope.saleryWithTax*taxFee);
+            $scope.employmentFee = Math.round(ownWithdrawl*(1-eFee));
+            $scope.saleryWithOutTax = Math.round($scope.saleryWithTax*(1-taxFee));
         };
     }
 ]);
