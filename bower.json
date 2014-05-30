@@ -1,0 +1,24 @@
+{
+  "name": "Eaccounting",
+  "version": "0.0.0",
+  "homepage": "http://www.eaccounting.joelekman.se/",
+  "authors": [
+    "Joel Ekman <joelekm@kth.se>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "angular": "~1.2.16",
+    "angular-resource": "~1.2.16",
+    "angular-route": "~1.2.16",
+    "ui.bootstrap": "~0.11.0",
+    "angular-bootstrap": "~0.11.0"
+  }
+}
