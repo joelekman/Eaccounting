@@ -1,6 +1,4 @@
-  'use strict';
-
-/* global angular */
+/*global angular*/
 /* jshint globalstrict: true */
 
 /* Controllers Module */
@@ -12,11 +10,11 @@ var eaccountingFactories = angular.module('eaccountingFactories', ['ngResource']
 /* App Module */
 
 var eaccounting = angular.module('eaccounting', [
-  'ngRoute',
-  'eaccountingControllers',
-  'eaccountingFactories',
-  'ui.bootstrap'
-]);
+        'ngRoute',
+        'eaccountingControllers',
+        'eaccountingFactories',
+        'ui.bootstrap'
+    ]);
 
 /*eaccounting.config(['$httpProvider', function($httpProvider) {
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -34,6 +32,7 @@ var eaccounting = angular.module('eaccounting', [
 
 eaccounting.config(['$routeProvider',
   function($routeProvider) { 
+    'use strict';
     $routeProvider.
       when('/', {
         templateUrl: 'partials/calcSaleryView.html',

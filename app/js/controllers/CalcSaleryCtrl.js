@@ -7,7 +7,7 @@
 eaccountingControllers.controller('CalcSaleryCtrl', ['$scope',
     function ($scope) {
         'use strict';
-        var eFee = (1 - 0.1488), taxFee = 0.3048;
+        var eFee = (1 - 0.1489), taxFee = 0.30325;
 
           
         $scope.counteOwnWithdrawl = function () {
@@ -19,10 +19,9 @@ eaccountingControllers.controller('CalcSaleryCtrl', ['$scope',
             }
         };
         
-        
         $scope.counteSaleryWithTax = function () {
-            console.log("i beräkna med Lön med skatt");
-            if ((typeof $scope.ownWithdrawl) === 'number') {
+            console.log("i beräkna Lön med skatt");
+            if ((typeof $scope.saleryWithTax) === 'number') {
                 $scope.count(Math.round($scope.saleryWithTax / eFee));
             } else {
                 alert("Då måste ange ett hur mycket bruttolön du vill ha");
@@ -31,7 +30,7 @@ eaccountingControllers.controller('CalcSaleryCtrl', ['$scope',
         
         $scope.counteTax = function () {
             console.log("i beräkna med skatt");
-            if ((typeof $scope.ownWithdrawl) === 'number') {
+            if ((typeof $scope.tax) === 'number') {
                 $scope.count(Math.round(($scope.tax / taxFee) / eFee));
             } else {
                 alert("Då måste ange hur mycket skatt du vill betala");
@@ -40,7 +39,7 @@ eaccountingControllers.controller('CalcSaleryCtrl', ['$scope',
         
         $scope.counteEmoloymentFee = function () {
             console.log("i beräkna med egenavgift");
-            if ((typeof $scope.ownWithdrawl) === 'number') {
+            if ((typeof $scope.employmentFee) === 'number') {
                 $scope.count(Math.round($scope.employmentFee / (1 - eFee)));
             } else {
                 alert("Då måste ange hur mycket egenavgift du vill betala");
@@ -49,10 +48,10 @@ eaccountingControllers.controller('CalcSaleryCtrl', ['$scope',
                             
         $scope.countSaleryWithOutTax = function () {
             console.log("i beräkna med nettolön");
-            if ((typeof $scope.ownWithdrawl) === 'number') {
+            if ((typeof $scope.saleryWithOutTax) === 'number') {
                 $scope.count(Math.round(($scope.saleryWithOutTax / (1 - taxFee)) / eFee));
             } else {
-                alert("Då måste ange ett hur mycket nettolön du vill ha");
+                alert("Då måste ange hur mycket nettolön du vill ha");
             }
         };
         
