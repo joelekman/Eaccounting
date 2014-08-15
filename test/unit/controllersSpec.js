@@ -116,13 +116,6 @@ describe('Test controllers', function () {
             expect(scope.employmentFee).toBe(4615);
         });
         
-        
-        
-        
-        
-        
-        
-        
         // Count from Employment fee
         
         it('Count from Employment fee | ownwithdrawl', function ($rootScope, $controller) {
@@ -154,14 +147,6 @@ describe('Test controllers', function () {
             scope.counteEmoloymentFee();
             expect(scope.employmentFee).toBe(4000);
         });
-        
-        
-        
-        
-        
-        
-        
-        
         
         // Count from salery without tax
         
