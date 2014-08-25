@@ -7,8 +7,8 @@
 eaccountingControllers.controller('CalcSaleryCtrl', ['$scope',
     function ($scope) {
         'use strict';
-        var eFee = (1 - 0.1489), taxFee = 0.30325;
-
+        var eFee = (1 - 0.14), taxFee = 0.30325;
+        //var eFee = (1 - 0.1489), taxFee = 0.30325;
           
         $scope.counteOwnWithdrawl = function () {
             console.log("i beräkna med ownWithdrawl");
