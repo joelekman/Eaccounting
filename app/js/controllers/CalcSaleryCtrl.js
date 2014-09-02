@@ -18,7 +18,7 @@ eaccountingControllers.controller('CalcSaleryCtrl', ['$scope',
                 alert("Då måste ange ett hur stort det egna utaget ska vara");
             }
         };
-        
+            
         $scope.counteSaleryWithTax = function () {
             console.log("i beräkna Lön med skatt");
             if ((typeof $scope.saleryWithTax) === 'number') {

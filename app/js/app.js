@@ -1,6 +1,9 @@
 /*global angular*/
 /* jshint globalstrict: true */
 
+/* Adress to the API */
+var apiAdress = "http://localhost:8888/api/";
+
 /* Controllers Module */
 var eaccountingControllers = angular.module('eaccountingControllers', []);
 
@@ -16,31 +19,36 @@ var eaccounting = angular.module('eaccounting', [
         'ui.bootstrap'
     ]);
 
-/*eaccounting.config(['$httpProvider', function($httpProvider) {
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-        $httpProvider.defaults.useXDomain = true;
-    }
-]); */
+eaccounting.config(['$httpProvider', function ($httpProvider) {
+    'use strict';
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    $httpProvider.defaults.useXDomain = true;
+}]);
 
-/*eaccounting.config(function($sceDelegateProvider) {
-     $sceDelegateProvider.resourceUrlWhitelist([
-       // Allow same origin resource loads.
-       'self',
-       // Allow loading from our assets domain.  Notice the difference between * and **.
-       serverAdress+'/**']);  
-      });*/
+eaccounting.config(function ($sceDelegateProvider) {
+    'use strict';
+    $sceDelegateProvider.resourceUrlWhitelist([
+        // Allow same origin resource loads.
+        'self',
+        // Allow loading from our assets domain.  Notice the difference between * and **.
+        apiAdress + '/**']);
+});
 
 eaccounting.config(['$routeProvider',
-  function($routeProvider) { 
-    'use strict';
-    $routeProvider.
-      when('/', {
-        templateUrl: 'partials/calcSaleryView.html',
-        controller: 'CalcSaleryCtrl'
-      }).
-      otherwise({
-        redirectTo: '/'
-      });
-}]);
+    function ($routeProvider) {
+        'use strict';
+        $routeProvider.
+            when('/', {
+                templateUrl: 'partials/login.php',
+                controller: 'LoginCtrl'
+            }).
+            when('/salery', {
+                templateUrl: 'partials/calcSaleryView.html',
+                controller: 'CalcSaleryCtrl'
+            }).
+            otherwise({
+                redirectTo: '/'
+            });
+    }]);
 
 
