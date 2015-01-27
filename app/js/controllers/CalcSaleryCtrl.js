@@ -7,8 +7,8 @@
 eaccountingControllers.controller('CalcSaleryCtrl', ['$scope',
     function ($scope) {
         'use strict';
-        var eFee = (1 - 0.14), taxFee = 0.30325;
-        //var eFee = (1 - 0.1489), taxFee = 0.30325;
+        var eFee = (1 - 0.25), taxFee = 0.30685;
+        //var eFee = (1 - 0.2897), taxFee = 0.30685;
           
         $scope.counteOwnWithdrawl = function () {
             console.log("i beräkna med ownWithdrawl");
@@ -62,5 +62,6 @@ eaccountingControllers.controller('CalcSaleryCtrl', ['$scope',
             $scope.tax = Math.round($scope.saleryWithTax * taxFee);
             $scope.employmentFee = Math.round(ownWithdrawl * (1 - eFee));
             $scope.saleryWithOutTax = Math.round($scope.saleryWithTax * (1 - taxFee));
+            $scope.totalTax = $scope.employmentFee + $scope.tax;
         };
     }]);

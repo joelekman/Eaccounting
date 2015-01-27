@@ -39,8 +39,10 @@ eaccounting.config(['$routeProvider',
         'use strict';
         $routeProvider.
             when('/', {
-                templateUrl: 'partials/login.php',
-                controller: 'LoginCtrl'
+//                templateUrl: 'partials/login.php',
+//                controller: 'LoginCtrl'
+                templateUrl: 'partials/calcSaleryView.html',
+                controller: 'CalcSaleryCtrl'
             }).
             when('/salery', {
                 templateUrl: 'partials/calcSaleryView.html',

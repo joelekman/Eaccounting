@@ -1,62 +1,70 @@
-<div class="content-wrapper">
+<div class="container-fluid">
 
     <div class="info-text-calculate">
         <h1> Hur mycket lön vill du ha?</h1>
         <p>Nedan kan du fylla i det fällt som är viktigast för dig.</p>
     </div>
         
-    <div class="calculation-fields">
-        <div class="field-wrapper">
-            <label for="ownWithdrawl">Eget utag: </label>
-            <form class="form-inline">
-                <div class="form-group">
-                    <input ng-model="ownWithdrawl" type="number" class="form-control" placeholder="Ange önskat eget utag i hela kronor">
+    
+    <form class="form-group form-group-lg">
+        
+        <div class="form-group form-group-lg">
+        <label for="ownWithdrawl">Eget utag: </label>
+            <div class="input-group col-xs-12">
+                <input ng-model="ownWithdrawl" type="number" class="form-control" placeholder="Ange önskat eget utag i hela kronor">
+                <span class="input-group-btn">
                     <button ng-click="counteOwnWithdrawl()" type="button" class="btn btn-default">Beräkna</button>
-                </div>
-            </form>
+                </span>
+            </div>
         </div>
-
-
-        <div class="field-wrapper">
+  
+        <div class="form-group form-group-lg">
             <label for="saleryWithTax">Bruttolön: </label>
-            <form class="form-inline">
-                <div class="form-group">
-                    <input ng-model="saleryWithTax" type="number" class="form-control" placeholder="Ange önskad bruttolön i hela kronor">
-                    <button ng-click="counteSaleryWithTax()" type="button" class="btn btn-default">Beräkna</button>
-                </div>
-            </form>
+            <div class="input-group col-xs-12">
+                <input ng-model="saleryWithTax" type="number" class="form-control" placeholder="Ange önskad bruttolön i hela kronor">
+                <span class="input-group-btn">
+                    <button ng-click="counteSaleryWithTax()" type="button" class="btn btn-default">Beräkna</button>    
+                </span>
+            </div>
         </div>
 
-        <div class="field-wrapper">
-            <label for="tax">Skatteavdrag:</label>
-            <form class="form-inline">
-                <div class="form-group">
-                    <input ng-model="tax" type="number" class="form-control" placeholder="Ange önskad skattekostnad i hela kronor">
+        <div class="form-group form-group-lg">
+        <label for="tax">Skatteavdrag:</label>
+           <div class="input-group col-xs-12">
+                <input ng-model="tax" type="number" class="form-control" placeholder="Ange önskad skattekostnad i hela kronor">
+                <span class="input-group-btn">
                     <button ng-click="counteTax()" type="button" class="btn btn-default">Beräkna</button>
-                </div>
-            </form>
+                </span>
+            </div>
         </div>
 
 
-        <div class="field-wrapper">
-            <label for="emplpymentFee">Egenavgift:</label>
-            <form class="form-inline">
-                <div class="form-group">
-                    <input ng-model="employmentFee" type="number" class="form-control" placeholder="Ange önskad egenavgift i hela kronor">
+        <div class="form-group form-group-lg">
+        <label for="emplpymentFee">Egenavgift:</label>
+           <div class="input-group col-xs-12">
+                <input ng-model="employmentFee" type="number" class="form-control col-xs-9" placeholder="Ange önskad egenavgift i hela kronor">
+                <span class="input-group-btn">
                     <button ng-click="counteEmoloymentFee()" type="button" class="btn btn-default">Beräkna</button>
-                </div>
-            </form>
+                </span>
+            </div>
         </div>
 
-        <div class="field-wrapper">
-            <label for="saleryWithOutTax">Nettolön:</label>
-            <form class="form-inline">
-                <div class="form-group">
-                    <input ng-model="saleryWithOutTax" type="number" class="form-control" placeholder="Ange önskad egenavgift i hela kronor">
+        <div class="form-group form-group-lg">
+        <label for="saleryWithOutTax">Nettolön:</label>
+           <div class="input-group col-xs-12">
+                <input ng-model="saleryWithOutTax" type="number" class="form-control" placeholder="Ange önskad egenavgift i hela kronor">
+                <span class="input-group-btn">
                     <button ng-click="countSaleryWithOutTax()" type="button" class="btn btn-default">Beräkna</button>
-                </div>
-            </form>
+                </span>
+            </div>
         </div>
-
+        
+        <div class="form-group form-group-lg">
+        <label for="totalTax">Totalt till skatteverket:</label>
+            <div class="input-group col-xs-12">
+                <input ng-model="totalTax" type="number" class="form-control" placeholder="Här visas den totala summan som ska skickas till skatteverket">
+            </div>
+        </div>
     </div>
+    </form>
 </div>    
