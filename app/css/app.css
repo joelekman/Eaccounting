@@ -5,6 +5,6 @@ field-wrapper
 form-inline
 form-group
 form-control*/
-.content-wrapper {
-  width: 100%;
+.margin-top-container {
+  padding-top: 50px;
 }
