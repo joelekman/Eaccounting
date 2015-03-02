@@ -2,7 +2,7 @@
 /* jshint globalstrict: true */
 
 /* Adress to the API */
-var apiAdress = "http://localhost:8888/api/";
+var apiAdress = "http://localhost:4000/api/";
 
 /* Controllers Module */
 var eaccountingControllers = angular.module('eaccountingControllers', []);
@@ -19,6 +19,7 @@ var eaccounting = angular.module('eaccounting', [
         'ui.bootstrap'
     ]);
 
+// Set up cross browser request for ease of testing
 eaccounting.config(['$httpProvider', function ($httpProvider) {
     'use strict';
     delete $httpProvider.defaults.headers.common['X-Requested-With'];

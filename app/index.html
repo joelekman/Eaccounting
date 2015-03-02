@@ -24,19 +24,23 @@
         <script src="/bower_components/angular-route/angular-route.min.js"></script>
         <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
         <!-- endinjector -->
-        <!--<script src="/bower_components/ui.bootstrap/dist/ui-bootstrap-0.11.0.js"></script>-->
+
 
         <!-- injector:js -->
         <script src="/js/app.js"></script>
         <script src="/js/forms.js"></script>
         <script src="/js/sha512.js"></script>
         <script src="/js/controllers/CalcSaleryCtrl.js"></script>
+        <script src="/js/controllers/HeaderCtrl.js"></script>
         <script src="/js/controllers/LoginCtrl.js"></script>
         <script src="/js/factories/LoginFactory.js"></script>
         <!-- endinjector -->
 
     </head>
     <body>
-        <div ng-view class="container"></div>
+        <div ng-controller="HeaderCtrl">
+            <ng-include src="'partials/header.html'"></ng-include>
+        </div>
+        <div ng-view class="container margin-top-container"></div>
     </body>
 </html>
