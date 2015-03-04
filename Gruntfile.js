@@ -23,6 +23,14 @@ module.exports = function(grunt) {
           }
         }
       },
+      php: {
+        dev: {
+            options: {
+                port: 5001,
+                base: 'app/api'
+            }
+        }
+      },
       less: {
           development: {
             options: {
@@ -49,6 +57,7 @@ module.exports = function(grunt) {
     // Load the plugin that provides the "uglify" task.
     //grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-injector');
+    grunt.loadNpmTasks('grunt-php');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
