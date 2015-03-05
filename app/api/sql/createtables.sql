@@ -1,0 +1,39 @@
+USE eaccounting;
+CREATE TABLE User
+(
+	UserId MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	UserName VARCHAR(32) NOT NULL UNIQUE,
+    CompanyName VARCHAR(32),
+	FirstName VARCHAR(32),
+	LastName VARCHAR (32),
+	Email VARCHAR(50) NOT NULL UNIQUE,
+	HashedPassword CHAR(128) NOT NULL,
+	Salt CHAR(128) NOT NULL,
+	CONSTRAINT PkUser_UserId PRIMARY KEY (UserId)
+) ENGINE = InnoDB;
+
+CREATE TABLE LoginLog
+(
+	UserId MEDIUMINT UNSIGNED NOT NULL,
+	LoginTimestamp TIMESTAMP NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+	SucceededLogin BIT(1) NOT NULL,
+	CONSTRAINT FkLoginLog_UserId FOREIGN KEY (UserId) REFERENCES User (UserId)
+) ENGINE = InnoDB;
+
+CREATE TABLE SaleryHistory
+(
+	SaleryId MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	UserId MEDIUMINT UNSIGNED NOT NULL,
+	OwnWithdrawl INT NOT NULL,
+    SaleryWithTax INT NOT NULL,
+    Tax INT NOT NULL,
+    EmploymentFee INT NOT NULL,
+    SaleryWithoutTax INT NOT NULL,
+    TotalTax INT NOT NULL,
+    Verification VARCHAR(32),
+    WithdrawYear INT,
+    WithdrawDate DATE,
+	LastUpdated TIMESTAMP NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT PkSaleryHistory_SaleryId PRIMARY KEY (SaleryId),
+    CONSTRAINT FkSaleryHistory_UserId FOREIGN KEY (UserId) REFERENCES User (UserId)
+) ENGINE = InnoDB;
