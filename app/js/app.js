@@ -49,6 +49,10 @@ eaccounting.config(['$routeProvider',
                 templateUrl: 'partials/calcSaleryView.html',
                 controller: 'CalcSaleryCtrl'
             }).
+            when('/apartement', {
+                templateUrl: 'partials/apartementView.html',
+                controller: 'ApartementCtrl'
+            }).
             otherwise({
                 redirectTo: '/'
             });

@@ -1,0 +1,60 @@
+<div class="container">
+
+    <div class="info-text-calculate">
+        <h1>Beräkna kostnaden för lägenheten!</h1>
+        <p>Fyll i alla fält nedan</p>
+    </div>
+
+
+    <form class="form-group form-group-lg">
+        <div class="form-group form-group-lg">
+            <label for="price">Pris: </label>
+            <div class="input-group col-xs-12">
+                <input ng-model="price" type="number" min="0" class="form-control" placeholder="Pris i hela kronor">
+            </div>
+        </div>
+
+        <div class="form-group form-group-lg">
+            <label for="cash">Kontantinsatts: </label>
+            <div class="input-group col-xs-12">
+                <input ng-model="cash" type="number" min="0" class="form-control" placeholder="Kontantinsatts i hela kronor">
+            </div>
+        </div>
+
+        <div class="form-group form-group-lg">
+            <label for="interest">Ränta: </label>
+            <div class="input-group col-xs-12">
+                <input ng-model="interest" type="number" min="0" class="form-control" placeholder="Ränta i procent">
+            </div>
+        </div>
+
+
+        <div class="form-group form-group-lg">
+            <label for="fee">Avgift: </label>
+            <div class="input-group col-xs-12">
+                <input ng-model="fee" type="number" min="0" class="form-control col-xs-9" placeholder="Avgift i hela kronor">
+            </div>
+        </div>
+
+        <div class="form-group form-group-lg">
+            <span class="input-group-btn">
+                <button ng-click="calculateCost()" type="button" class="btn btn-default">Beräkna</button>
+            </span>
+        </div>
+    </form>
+
+    <form class="form-group form-group-lg">
+        <div class="form-group form-group-lg">
+            <label for="monthlyCost">Kostnad per månad: </label>
+            <div class="input-group col-xs-12">
+                <input ng-model="monthlyCost" type="number" min="0" class="form-control col-xs-9" placeholder="Månads kostnad kommer visas här">
+            </div>
+        </div>
+        <div class="form-group form-group-lg">
+            <label for="mothlyCostTaxDeduction">Kostnad per månad efter skatteavdrag: </label>
+            <div class="input-group col-xs-12">
+                <input ng-model="mothlyCostTaxDeduction" type="number" min="0" class="form-control col-xs-9" placeholder="Månads kostnad efter skatteavdrag kommer visas här">
+            </div>
+        </div>
+    </form>
+</div>    
